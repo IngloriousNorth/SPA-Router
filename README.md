@@ -1,4 +1,4 @@
-TEMPEST requires partials with class "TEMPEST" and [a] with class "TEMPEST", where second class of [a] routes to #class *without external JavaScript". 
+TEMPEST requires partials with class "TEMPEST" and [a] with class "TEMPEST", where second class of [a] *in your HTML* routes to #class *without external JavaScript". 
 
 OR MANUALLY ROUTE:
 
