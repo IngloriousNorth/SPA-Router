@@ -1,7 +1,5 @@
-These Modules /route #anchors so you don't have to deal with AngularJS or React; blackboxed so you can write your own JavaScript Programming Architecture: just include one Router as a lib dependency!
+TEMPEST requires partials with class "TEMPEST" and <a> with class "TEMPEST", where second class of <a> routes to #class *without external JavaScript". 
 
-For example with ANCHOR, you can ANCHOR.route("#page") or simply include .ANCHOR_partial on on your partial, and add ANCHOR as first class of <a> and second class of _ANCHOR_partial as second class of <a>, and <a> will route *without an href*.
+OR
 
-ANCHOR and TEMPLAR require jQuery. 
-
-TEMPEST requires partials with class "TEMPEST" and <a> with class "TEMPEST"
+TEMPEST.route("#partial") //routes to <div class="TEMPEST partial"
