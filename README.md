@@ -22,8 +22,9 @@ Before you start your app functions.
 Put your partials.html in a client/partials folder, or set the partial dir in your config object.
 
 ### EXAMPLE
-client/partials/home.html //this page shows when URL is #home
-client/partials/table.html //this partial shows when URL is #table
+client/partials/home.html //this page shows when URL is #home<br>
+client/partials/table.html //this partial shows when URL is #table<br>
+Make sure your directory structure has the partials.html with the page and #URL name, corresponding to the HTML structure.
 
 ## HTML STRUCTURE
 ```
