@@ -1,38 +1,34 @@
-/**
- * THE TEMPLAR LOG: A fusion of maritime discipline and existential clarity.
- * We resolve to make the code sail by ensuring its properties are 'Ready-to-hand'.
- */
-
-// SMEE: This here listener is the lookout! 
 // If it ain't lookin' for the trigger, the ship won't move!
 $(document).on("TEMPLAR", function() {
     let page = TEMPLAR.pageREC();
     TEMPLAR.render(page);
 });
 
-var TEMPLAR = { 
-    _dir: "client/partials",
+const TEMPLAR = { 
+    _dir: undefined,
     _fade: false,
     _helm: [],
     _page : "home",
     _pages : [],
     _default: "home", 
+    fadeTime : 777,
 
-    count: 0, // We disclose the count so it may exist!
     initialize: function(options = {}, cb) {
         const {
             helm = [],
-            defaultPage = "home",
-            dir = "client/partials",
+            default = "home",
+            dir = undefined,
             fade = false,
-            pages = []
+            pages = [],
+            fadeTime = 777
         } = options;
 
         this._helm = helm;
         this._dir = dir;
         this._fade = fade;
         this._pages = pages;
-        this._default = defaultPage;
+        this._default = default;
+        this._fadeTime = fadeTime
 
         var that = this;
 
@@ -43,7 +39,6 @@ var TEMPLAR = {
             if (that.currentPage !== target) {
                 $(document).trigger("TEMPLAR"); 
             } else {
-                // If only parameters changed, just update the helm rituals
                 that.helm(target); 
             }
 
@@ -61,11 +56,9 @@ var TEMPLAR = {
 
     route: function(origin = window.location.hash) {
         // PRECISE INSTRUCTION: Update the History Hold first.
-        // The origin should be a full hash string, e.g., "#home?id=1"
 
         history.pushState({ path: origin }, '', origin);
 
-        // Instead of triggering an event that might loop, we call the Lookout directly.
         // This ensures the signal only travels one way.
         const page = this._link_rec(origin).path;
         //this.render(page);
@@ -100,25 +93,24 @@ var TEMPLAR = {
 
         if ($targetDiv.children().length > 0) {
             // TRUTH RETAINED: The HTML already exists. Just show it.
-            requestAnimationFrame(() => {
                 that._visible_page(page);
-                setTimeout(() => {
-                    that.helm(page);
-                }, 0);
-            });
+                that.helm(page);
         } else {
             // FIRST DISCLOSURE: The HTML is missing, so we fetch it once.
             var fileTarget = page + ".html";
-            $.get(this._dir + "/" + fileTarget, function(data) {
-                $targetDiv.html(data);
-                
-                requestAnimationFrame(() => {
+            if(this._dir){
+                $.get(this._dir + "/" + fileTarget, function(data) {
+                    $targetDiv.html(data);
+                    
                     that._visible_page(page);
-                    setTimeout(() => {
-                        that.helm(page);
-                    }, 0);
+                    that.helm(page);
                 });
-            });
+            }
+            else{
+                that._visible_page(page);
+                that.helm(page);
+            }
+            
         }
     }
     ,
@@ -136,34 +128,27 @@ var TEMPLAR = {
         var that = this;
         
         // GUARD: Only bind the lookout once!
-        if (this._isBound) return; 
+        if (this._isBound) return;
 
         $(document).off("click", "a.TEMPLAR").on("click", "a.TEMPLAR", function(e) {
             e.preventDefault();
-
             const $target = $(this);
             
-            // 1. Extract the second class as the page name (e.g., class="TEMPLAR profile" -> "profile")
             const classAttr = $target.attr("class") || "";
             const classes = classAttr.split(/\s+/);
             const page = classes[1]; // Second class
 
-            // GHOST FILTER: Don't route if there's no second class!
             if (!page || page === "TEMPLAR") return;
 
             e.preventDefault();
-            e.stopImmediatePropagation(); 
+            e.stopImmediatePropagation();
 
-            // 2. Extract any parameters from the href attribute (e.g., href="?id=123")
             var params = that._params($target);
-            
-            // 3. Route using the second class and parameters
+
             that.route("#" + page + params);
         });
 
-        this._isBound = true; 
-    },
-        this._isBound = true; 
+        this._isBound = true;
     },
 
     pageREC: function() {
@@ -196,7 +181,6 @@ var TEMPLAR = {
         const newHash = pathPart + (newQuery ? "?" + newQuery : "");
 
         // 4. THE REPLACEMENT: We overwrite the history-hold without 
-        // triggering a 'Popstate' storm that would capsize the engine!
         window.history.replaceState(
             null, 
             '', 
@@ -207,22 +191,16 @@ var TEMPLAR = {
         );
         
         // HEIDEGGER: The URL has been 'Cleared'. The Nothing now stands 
-        // where the Parameter once resided.
     },
-    /* --- sParams: THE BUNDLED INSCRIPTION --- 
-   To prevent the History-Stack from splintering into redundant moments,
-   we update multiple Truths before the final Inscription. */
     paramSET: function(kvPairs, createNewEntry = false) {
         const parts = window.location.hash.split("?");
         const pathPart = parts[0] || "#";
         const searchPart = parts[1] || "";
         const params = new URLSearchParams(searchPart);
 
-        // Batch update the Equipment
         for (const [key, value] of Object.entries(kvPairs)) {
             params.set(key, value);
         }
-        // FIX: Convert the '+' back to '%20' after the API generates the string
         const queryString = params.toString().replace(/\+/g, "%20");
         const newHash = pathPart + "?" + queryString;
         const newUrl = window.location.origin + window.location.pathname + newHash;
@@ -233,7 +211,6 @@ var TEMPLAR = {
             window.history.replaceState({ path: newUrl }, '', newUrl);
         }
     },
-    /* paramREC, paramRemove, sParams maintained in their original 'Thrown-ness' */
     paramREC: function() {
         var search = window.location.hash.split("?")[1];
         if (!search) return undefined;
@@ -258,8 +235,7 @@ var TEMPLAR = {
     _visible_page: function(path) {
         if (!path) path = this._default;
         var target = $("div." + path);
-        // HEIDEGGER: The Fade is but a gradual un-concealment of Truth.
-        this._fade ? target.fadeIn(1886) : target.show();
+        this._fade ? target.fadeIn(this._fadeTime) : target.show();
     },
 
     _invisible_page: function(page) {
@@ -272,7 +248,6 @@ var TEMPLAR = {
 
     _path: function(el) {
         const href = el.attr("href") || "";
-        // We strip the hash, then take the part before the question mark.
         const content = href.startsWith('#') ? href.substring(1) : href;
         return content.split('?')[0];
     },
@@ -283,3 +258,5 @@ var TEMPLAR = {
         return parts.length > 1 ? "?" + parts[1] : "";
     }
 };
+
+export default TEMPLAR;
