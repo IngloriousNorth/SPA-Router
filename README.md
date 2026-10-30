@@ -51,6 +51,8 @@ Make sure your directory structure has the partials.html with the page and #URL 
         fade: false,
         pages: ["home", "table"]
   }
+  //before you start your leisurely app fns()
+  TEMPLAR.initialize(config);
 ```
 
 ## AUTO-ROUTE:
