@@ -5,6 +5,7 @@ TEMPLAR automatically routes your HTML pages, and includes functions for getting
 You can also manually route using TEMPLAR.route("#partial_name").
 
 Run functions manually using if(TEMPLAR.pageREC() === pageName)
+
 Run functions automatically on client Route using the helm() config property.
 
 Return URL PARAMS using TEMPLAR.paramREC().key
@@ -41,6 +42,15 @@ Make sure your directory structure has the partials.html with the page and #URL 
   <div class="TEMPLAR table"></div>
   <footer></footer><!--optional, TEMPLAR-agnostic !-->
 </body>
+```
+## CONFIG
+```
+  const config = {
+        defaultPage: "home",
+        dir: "client/partials",
+        fade: false,
+        pages: ["home", "table"]
+  }
 ```
 
 ## AUTO-ROUTE:
