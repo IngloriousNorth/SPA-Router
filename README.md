@@ -2,15 +2,39 @@
 
 TEMPLAR automatically routes your HTML pages, and includes functions for getting #anchor_page_url, query PARAMS, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions @ the programmer's leisure) on every page load.  
 
-You can also manually route using TEMPLAR.route("#partial_name").
 
-Run functions manually using if(TEMPLAR.pageREC() === pageName)
+# DOCUMENTATION
+## OVERVIEW
+### You can also manually route using 
+```
+  TEMPLAR.route("#partial_name");
+```
+
+### Run functions manually using 
+```
+  if(TEMPLAR.pageREC() === pageName)
+    pageNameFn();
+```
 
 Run functions automatically on client Route using the helm() config property.
 
-Return URL PARAMS using TEMPLAR.paramREC().key
+### Return URL-QUERY-PARAMS
+```
+  TEMPLAR.paramREC().index
 
-# DOCUMENTATION
+  //OR
+  const params = TEMPLAR paramREC();
+  var i = params.index
+```
+### Set URL-QUERY-PARAMS
+```
+  TEMPLAR.paramSET({
+    id: "123",
+    tab: "settings",
+    filter: "active"
+});
+//I don't really use this, I just route and include the params in the #route?param=
+```
 
 ## INITIALIZATION
 TEMPLAR is an Architecture-Agnostic Router, but before you start your personal SPA app, run 
@@ -70,4 +94,11 @@ Make sure your directory structure has the partials.html with the page and #URL 
 
 ```
 
-TEMPEST.route("#partial") //routes to <div class="TEMPEST partial"
+## MANUAL-ROUTE
+```
+  TEMPEST.route("#home") //routes to <div class="TEMPEST home"
+  TEMPEST.route("#table?id=1");
+```
+
+## HELM CONFIG AUTO-Fns()
+
