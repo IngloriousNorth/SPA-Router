@@ -1,6 +1,6 @@
 # WELCOME to TEMPLAR-SPA-ROUTER!
 
-TEMPLAR automatically routes your HTML pages, and includes functions for getting #anchor_page_url, query PARAMS, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions at the programmer's leisure) on every page load.  
+TEMPLAR automatically routes your HTML pages, and includes functions for getting #anchor_page_url, query PARAMS, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions at the programmer's leisure) on every page load. With this you get a Router that is Application-Agonistic, so you don't need to learn to code the way AngularJS or React want you to!
 
 
 # DOCUMENTATION
@@ -129,4 +129,4 @@ This is completely optional, but this is how TEMPLAR works with the MAINFRAME-MV
               }
   ]
 ```
-This way you organize your code MVC, in a modular way so you aren't beholden to the discipline of React or AngularJS, and can freely code how you want.
+This way you organize your code MVC, in a modular way, with TEMPLAR and MAINFRAME.
