@@ -8,6 +8,7 @@ TEMPLAR automatically routes your HTML pages, and includes functions for getting
 ### Manual-Route
 ```
   TEMPLAR.route("#partial_name");
+  TEMPLAR.route("#table?sales=1);
 ```
 
 ### Run your own functions manually using 
