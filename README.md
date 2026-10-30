@@ -33,7 +33,6 @@ Best Practice: Run functions automatically on client Route using the helm[] conf
     tab: "settings",
     filter: "active"
 });
-//I don't really use this, I just route and include the params in the #route?param=
 ```
 
 ## INITIALIZATION
