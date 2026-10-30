@@ -54,9 +54,9 @@ Before you start your app functions.
 Put your partials.html in a client/partials folder, or set the partial dir in your config object.
 
 ### EXAMPLE
-client/partials/home.html //this partial shows when TEMPLAR.pageREC() is #home<br>
-client/partials/table.html //this partial shows when TEMPLAR.pageREC() is #table<br><br>
-Make sure your directory structure has the partials.html with the page and #URL name, corresponding to the HTML structure.
+client/partials/home.html //this partial shows when TEMPLAR.pageREC() is "home"<br>
+client/partials/table.html //this partial shows when TEMPLAR.pageREC() is "table"<br><br>
+Make sure your directory structure has the partials.html with the partial (shared with ANCHOR#URL) name, corresponding to the HTML structure.
 
 ## HTML STRUCTURE
 ```
