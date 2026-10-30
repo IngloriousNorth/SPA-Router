@@ -1,5 +1,7 @@
 TEMPLAR automatically routes your HTML pages, when you use class "TEMLAR" on a partial and an [a] element that you want to link-route to the second class, what represents the partial_name, of [a, div].
 
+You can also manually route using TEMPLAR.route("#partial_name").
+
 # DOCUMENTATION
 
 ## INITIALIZATION
