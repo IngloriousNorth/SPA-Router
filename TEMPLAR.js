@@ -139,6 +139,8 @@ var TEMPLAR = {
         if (this._isBound) return; 
 
         $(document).off("click", "a.TEMPLAR").on("click", "a.TEMPLAR", function(e) {
+            e.preventDefault();
+
             const $target = $(this);
             
             // 1. Extract the second class as the page name (e.g., class="TEMPLAR profile" -> "profile")
