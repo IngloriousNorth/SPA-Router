@@ -1,6 +1,6 @@
 # WELCOME to TEMPLAR-SPA-ROUTER!
 
-TEMPLAR automatically routes your HTML pages, and includes functions for getting #anchor_page_url, Query Params, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions at the programmer's leisure) on every page load. With this you get a Router that is Application-Agonistic, so you don't need to learn a huge constraining library like ANGULAR or REACT.
+On a simple initialization with a config object, TEMPLAR automatically routes your HTML partials, and includes functions for getting #anchor_page_url, Query Params, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions at the programmer's leisure) on every page load. With this you get a Router that is Application-Agonistic, so you don't need to learn a huge constraining library like ANGULAR or REACT.
 
 
 # DOCUMENTATION
@@ -17,7 +17,7 @@ TEMPLAR automatically routes your HTML pages, and includes functions for getting
     partialNameFn();
 ```
 
-Best Practice: Run functions automatically on client Route using the helm() config property.
+Best Practice: Run functions automatically on client Route using the helm[] config property.
 
 ### Return URL-QUERY-PARAMS
 ```
