@@ -37,9 +37,9 @@ Make sure your directory structure has the partials.html with the page and #URL 
 ```
 
 ## AUTO-ROUTE:
--add "TEMPLAR" as First-Class of your &lt;div&rt; SPA partial
--add "TEMPLAR as First-Class of your &lt;a&rt;.
--add "partial_name" to second class of &lt;div&rt; and &lt;a&lt; (-- this is also your #URL name)
+-add "TEMPLAR" as First-Class of your &lt;div&gt; SPA partial
+-add "TEMPLAR as First-Class of your &lt;a&gt;.
+-add "partial_name" to second class of &lt;div&gt; and &lt;a&gt; (-- this is also your #URL name)
 ### Example:
 ```
   <div class="menu">
