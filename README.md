@@ -1,6 +1,6 @@
 # WELCOME to TEMPLAR-SPA-ROUTER!
 
-TEMPLAR automatically routes your HTML pages, and includes functions for getting #anchor_page_url, query PARAMS, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions @ the programmer's leisure) on every page load.  
+TEMPLAR automatically routes your HTML pages, and includes functions for getting #anchor_page_url, query PARAMS, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions at the programmer's leisure) on every page load.  
 
 
 # DOCUMENTATION
