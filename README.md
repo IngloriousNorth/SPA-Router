@@ -50,7 +50,7 @@ Before you start your app functions.
 
 ## DIR STRUCTURE
 
-Put your partials.html in a client/partials folder, or set the partial dir in your config object.
+Put your partials.html in a client/partials folder, or set the partial .dir property, in your config object!
 
 ### EXAMPLE
 client/partials/home.html //this partial shows when TEMPLAR.pageREC() is "home"<br>
