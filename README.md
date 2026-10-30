@@ -5,18 +5,18 @@ TEMPLAR automatically routes your HTML pages, and includes functions for getting
 
 # DOCUMENTATION
 ## OVERVIEW
-### You can also manually route using 
+### Manul-Route
 ```
   TEMPLAR.route("#partial_name");
 ```
 
-### Run functions manually using 
+### Run your own functions manually using 
 ```
   if(TEMPLAR.pageREC() === pageName)
     pageNameFn();
 ```
 
-Run functions automatically on client Route using the helm() config property.
+Best Practice: Run functions automatically on client Route using the helm() config property.
 
 ### Return URL-QUERY-PARAMS
 ```
