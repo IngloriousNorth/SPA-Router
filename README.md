@@ -12,7 +12,7 @@ On a simple initialization with a config object, TEMPLAR automatically routes yo
 
 ### GET PAGE
 ```
-  if(TEMPLAR.pageREC() === partialName) //no # before partial_name
+  if(TEMPLAR.pageREC() === "partialName") //no # before partial_name
     partialNameFn();
 ```
 
