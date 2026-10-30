@@ -2,6 +2,8 @@
 
 On a simple initialization with a config object, TEMPLAR automatically routes your HTML partials, and includes functions for getting #anchor_page_url, Query Params, manual routing, and, miraculously, a helm() config option that automatically runs a function (which can contain Architecture-Agnostic app functions at the programmer's leisure) on every page load. With this you get a Router that is Application-Agonistic, so you don't need to learn a huge constraining library like ANGULAR or REACT.
 
+Plug in the simple MAINFRAME Model-View-Controller (MVC) module and you have a production-ready MVC SPA running on a lite-weight Router.
+
 
 # DOCUMENTATION
 ## OVERVIEW
