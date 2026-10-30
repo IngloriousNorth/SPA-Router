@@ -5,7 +5,7 @@ TEMPLAR automatically routes your HTML pages, and includes functions for getting
 
 # DOCUMENTATION
 ## OVERVIEW
-### Manul-Route
+### Manual-Route
 ```
   TEMPLAR.route("#partial_name");
 ```
@@ -96,8 +96,8 @@ Make sure your directory structure has the partials.html with the page and #URL 
 
 ## MANUAL-ROUTE
 ```
-  TEMPEST.route("#home") //routes to <div class="TEMPEST home"
-  TEMPEST.route("#table?id=1");
+  TEMPLAR.route("#home") //routes to <div class="TEMPLAR home"
+  TEMPLAR.route("#table?id=1");
 ```
 ## HELM AUTO-Fns() ON ROUTE!
 Where helm is a config property ie 
@@ -118,7 +118,7 @@ const helm = [
 Helm is optional, and even if you have a helm, if your page has no JS (like "home"), you needn't include it! 
 
 ## MAINFRAME-MVC MODULE
-This is completely optional, but this is how TEMPEST works with the MAINFRAME-MVC plugin:
+This is completely optional, but this is how TEMPLAR works with the MAINFRAME-MVC plugin:
 ```
   const helm = [
               {
