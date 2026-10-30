@@ -116,3 +116,17 @@ const helm = [
 ]
 ```
 Helm is optional, and even if you have a helm, if your page has no JS (like "home"), you needn't include it! 
+
+## MAINFRAME-MVC MODULE
+This is completely optional, but this is how TEMPEST works with the MAINFRAME-MVC plugin:
+```
+  const helm = [
+              {
+                  page: "table",
+                  fn: function() {
+                     MVC.Controller.Table.initialize(TEMPLAR.paramREC().id);
+                  }
+              }
+  ]
+```
+This way you organize your code MVC, in a modular way so you aren't beholden to the discipline of React or AngularJS, and can freely code how you want.
