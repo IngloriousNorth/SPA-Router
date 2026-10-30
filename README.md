@@ -99,6 +99,20 @@ Make sure your directory structure has the partials.html with the page and #URL 
   TEMPEST.route("#home") //routes to <div class="TEMPEST home"
   TEMPEST.route("#table?id=1");
 ```
-
-## HELM CONFIG AUTO-Fns()
-
+## HELM AUTO-Fns() ON ROUTE!
+Where helm is a config property ie 
+```
+const config = {
+  pages :["home", "table"],
+  helm : helm
+}:
+const helm = [
+            {
+                page: "table",
+                fn: function() {
+                   initializeTable(TEMPLAR.paramREC().id);
+                }
+            }
+]
+```
+Helm is optional, and even if you have a helm, if your page has no JS (like "home"), you needn't include it! 
