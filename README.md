@@ -1,6 +1,13 @@
+# WELCOME to TEMPLAR-SPA-ROUTER!
+
 TEMPLAR automatically routes your HTML pages, when you use class "TEMLAR" on a partial and an [a] element that you want to link-route to the second class, what represents the partial_name, of [a, div].
 
 You can also manually route using TEMPLAR.route("#partial_name").
+
+Run functions manually using if(TEMPLAR.pageREC() === pageName)
+Run functions automatically on client Route using the helm() config property.
+
+Return URL PARAMS using TEMPLAR.paramREC().key
 
 # DOCUMENTATION
 
