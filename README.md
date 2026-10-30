@@ -11,10 +11,10 @@ TEMPLAR automatically routes your HTML pages, and includes functions for getting
   TEMPLAR.route("#table?sales=1);
 ```
 
-### Run your own functions manually using 
+### GET PAGE
 ```
-  if(TEMPLAR.pageREC() === pageName)
-    pageNameFn();
+  if(TEMPLAR.pageREC() === partialName) //no # before partial_name
+    partialNameFn();
 ```
 
 Best Practice: Run functions automatically on client Route using the helm() config property.
